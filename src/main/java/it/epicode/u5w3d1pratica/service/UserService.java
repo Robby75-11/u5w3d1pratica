@@ -31,6 +31,11 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public List<User> getUsers(){
+
+        return userRepository.findAll();
+    }
+
     public User getUser(int id) throws NotFoundException {
         return userRepository.findById(id).
                 orElseThrow(() -> new NotFoundException("User con id " + id + " non trovato"));

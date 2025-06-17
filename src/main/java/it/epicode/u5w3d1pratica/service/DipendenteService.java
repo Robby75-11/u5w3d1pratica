@@ -87,7 +87,7 @@ public class DipendenteService {
             dipendente.setImmagineProfiloUrl(dipendenteDto.getImmagineProfiloUrl());
         }
 
-        sendMail(dipendenteDto.getEmail());
+       // sendMail(dipendenteDto.getEmail());
         Dipendente savedDipendente = dipendenteRepository.save(dipendente);
 
         return mapToDipendenteDto(savedDipendente);

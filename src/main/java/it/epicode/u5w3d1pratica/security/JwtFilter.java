@@ -23,8 +23,8 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String authorization = request.getHeader("Authorization");
 
-        if(authorization==null || authorization.startsWith("Bearer ")) {
-            throw new UnAuthorizedException("Token non presente, non sei autorizzato ad usare il servizio richiesto");
+        if(authorization==null || !authorization.startsWith("Bearer ")) {
+            throw new UnAuthorizedException("Token non presente, non sei autorizzato ");
         }
         else{
             //estraggo il token dalla stringa authorization che contiene anche la parola Bearer prima del token. Per questo prendo solo
